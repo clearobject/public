@@ -25,7 +25,7 @@ root    ALL=(ALL)       ALL
 #EOF#
 visudo -c -f /tmp/sudoers.new
 if [ "$?" -eq "0" ]; then
-    cp -fn /tmp/sudoers.new /etc/sudoers
+    cp -f /tmp/sudoers.new /etc/sudoers
 fi
 rm /etc/sudoers.tmp
 
