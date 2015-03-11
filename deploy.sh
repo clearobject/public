@@ -2,7 +2,7 @@
 adduser -g wheel cloudadmin
 mkdir /home/cloudadmin/.ssh
 cp ~/.ssh/authorized_keys /home/cloudadmin/.ssh/authorized_keys
-chown -R cloudadmin:cloudadmin /home/cloudadmin/.ssh
+chown -R cloudadmin:wheel /home/cloudadmin/
 
 if [ -f "/etc/sudoers.tmp" ]; then
     exit 1
