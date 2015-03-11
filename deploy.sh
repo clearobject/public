@@ -1,10 +1,14 @@
 #!/bin/bash
-adduser cloudadmin
+adduser -g wheel cloudadmin
 mkdir /home/cloudadmin/.ssh
 cp ~/.ssh/authorized_keys /home/cloudadmin/.ssh/authorized_keys
 chown -R cloudadmin:cloudadmin /home/cloudadmin/.ssh
 
-cat > /etc/sudoers << '#EOF#'
+if [ -f "/etc/sudoers.tmp" ]; then
+    exit 1
+fi
+touch /etc/sudoers.tmp
+cat > /tmp/sudoers.new << '#EOF#'
 Defaults    always_set_home
 Defaults    env_reset
 Defaults    env_keep =  "COLORS DISPLAY HOSTNAME HISTSIZE INPUTRC KDEDIR LS_COLORS"
@@ -19,5 +23,12 @@ root    ALL=(ALL)       ALL
 ## Read drop-in files from /etc/sudoers.d (the # here does not mean a comment)
 #includedir /etc/sudoers.d
 #EOF#
+visudo -c -f /tmp/sudoers.new
+if [ "$?" -eq "0" ]; then
+    cp -fn /tmp/sudoers.new /etc/sudoers
+fi
+rm /etc/sudoers.tmp
+
+
 
 echo 'Complete!'
