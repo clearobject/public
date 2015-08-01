@@ -1,8 +1,10 @@
 #!/bin/bash
 adduser -g wheel cloudadmin
 mkdir /home/cloudadmin/.ssh
-cp ~/.ssh/authorized_keys /home/cloudadmin/.ssh/authorized_keys
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC1ra4FjavvNUu4xN3RcFwUw9qQQBssmKDm9J/lBHPMvSDroVR//anOa+1ZUOryu5FkmsQuYPs59umXiUuVkoO5F0B6HQMUpcuuNc745VHA8SNmMj3ceqY7T2otsjosqZLmVdVjzd8+umHq5C9yRX13ldc6zFeF0ajZhuR3kCrS8Tjjn4yXuRpYTjrsUMVJEpXHjuW9CmuVoBltAAHTS/D7MTID/TcFw0YaNA1WRsZ/gPbmLg6bVR1uCrafh0sodbfy3XwS8lyuXT+rYgoiT+Sy+HBtqK8I0gYxUAU0gxb3CVeVLskY3P89SsOMAyYfDbeypxrlYIAk5nCLg3E4Bb+J cloudone-staff" > /home/cloudadmin/.ssh/authorized_keys
 chown -R cloudadmin:wheel /home/cloudadmin/
+chmod 0700 /home/cloudadmin/.ssh
+chmod 0600 /home/cloudadmin/.ssh/authorized_keys
 
 if [ -f "/etc/sudoers.tmp" ]; then
     exit 1
