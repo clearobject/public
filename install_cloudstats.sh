@@ -9,10 +9,10 @@
 set -e
 mkdir -p /cloudstats2
 cd /cloudstats2
-wget https://sunlight.oncloudone.com/downloads/cloudstats-3.0.77.linux-x86_64.zip
-unzip cloudstats-3.0.77.linux-x86_64.zip
+wget https://sunlight.oncloudone.com/downloads/cloudstats-3.0.98.linux-x86_64.zip
+unzip cloudstats-3.0.98.linux-x86_64.zip
 echo "Creating Default Cloudstats2 log_directories configuration in /cloudstats2/sunlight.conf"
-echo -e """[global]\nlog_directories=/opt/IBM/JazzTeamServer/server/logs,/opt/IBM/JazzTeamServer/server/tomcat/logs\n" > sunlight.conf
+echo -e """[global]\nlog_directories=/opt/IBM/JazzTeamServer/server/logs,/opt/IBM/JazzTeamServer/server/tomcat/logs,/var/log/jazz,/var/log/cloudone\n" > sunlight.conf
 croncmd='(cd /cloudstats2;timeout 300 ./cloudstats > lastrun.txt 2>&1)'
 cronjob="*/5 * * * * $croncmd"
 echo 'Adding cronjob for cloudstats'
