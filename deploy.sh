@@ -1,7 +1,7 @@
 #!/bin/bash
 adduser -g wheel cloudadmin
 mkdir /home/cloudadmin/.ssh
-echo "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6sMBWqeONW+0kEtXEmi3BdxKxu0R+kNVZf4xsjgWqigWvr//02DNw8zrV34uljT9KACy0ZpMtyyABUZ/pZOVT4g4HU5ONIMqpxxTrHXIx/+dy3TF544XdFXUImfzUS5IIPZaDf3MU+r3X4fHiuTK1y9PbR6hYJIUMZHO3hvIy7PPrKZwx4r+BlUEP8BYn5Sl9FkMNdFd+WJmyZ8svD+fRNIOZm+2U+1uyMLLgCZxEYCy0NP19pZijNovLtt2v27LV6q1WNPjaz5/UZAHbHF70fZMsAQaUcHs0xBGSc6rJrXsbpsoC1kY8fUpu4VIvQzn5mIuSf/a2F/l5FbruplkfQ==" > /home/cloudadmin/.ssh/authorized_keys
+echo "ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA9fXds8APOnALDfsgzYwNPjzAf0DQQDoqFg3ugj8kP/i6qacNeVwH8o0dH0x4Ktty3VgZwTKKosAG3fP/TyjlrYsQTccxXRa/TJDlCzfA41swrzagz/fUXfnSGYaH3hjY44MoSZ7SUedURT+PKtDdtit+7qzUlUddBJLlK2Ji+W7c0/DnoUq5g1aRUkf6BsWpcmGDUzeX0pllc8eLIR8YQApeZ6d4lPEsVIyBDLTAKUhPDmPP/oDQAyhYuw6pXKx387Q2jiqPkMzjosdglLog0vSzO0+r5L+h4bUbkcMmuL3tziMnFnN6bVpzDnadIX2xru0iREb9P6gVRDCl6xpjzw==" > /home/cloudadmin/.ssh/authorized_keys
 chown -R cloudadmin:wheel /home/cloudadmin/
 chmod 0700 /home/cloudadmin/.ssh
 chmod 0600 /home/cloudadmin/.ssh/authorized_keys
